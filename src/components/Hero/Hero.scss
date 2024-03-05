@@ -1,0 +1,17 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.hero.component.container {
+  @include utils.custom-background("/assets/home-hero.png");
+  padding: 96px 0 56px;
+
+  p.hero.title {
+    @include styles.display-xl;
+    @include weights.semibold;
+    color: colors.$gray-iron-25;
+  }
+}

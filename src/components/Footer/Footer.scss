@@ -110,34 +110,10 @@
   }
 
   .footer.container {
-    position: relative;
+    @include utils.custom-background("/assets/footer-bg.png");
     text-align: center;
     padding-top: 72px;
     color: colors.$gray-iron-25;
-    z-index: 1;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-    }
-
-    &::before {
-      background: colors.$gray-iron-900;
-      opacity: 0.9;
-      z-index: -1;
-    }
-
-    &::after {
-      background: url("/assets/footer-bg.png") no-repeat center center;
-      background-size: cover;
-      background-position: center bottom 33%;
-      z-index: -2;
-      filter: grayscale(100%);
-    }
 
     .content {
       max-width: 600px;

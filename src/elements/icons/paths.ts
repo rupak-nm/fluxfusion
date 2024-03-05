@@ -129,7 +129,7 @@ const paths: Path = {
   "linkedin-white": import("./variants/Socials/svg/white/LinkedIn.svg?raw"),
   "github-white": import("./variants/Socials/svg/white/GitHub.svg?raw"),
 
-  
+  "arrow-up-right": import("./variants/Arrows/arrow-up-right.svg?raw"),
 };
 
 export { paths };

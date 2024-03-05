@@ -1,0 +1,62 @@
+---
+import Container from "@/components/Container/Container.astro";
+import Icon from "@/elements/Icon.astro";
+
+const data = [
+  {
+    title: "How Was Fixed Float Exploited?",
+    description:
+      "Learn how Fixed Float was exploited, resulting in a loss of assets worth $26.53 million.",
+    link: "#",
+  },
+  {
+    title: "Analysis of a Bug in the Compound Protocol",
+    description:
+      "Understand how Mark Cuban's hot wallet was hacked resulting in a loss of $870,000.",
+    link: "#",
+  },
+  {
+    title: "What to Learn from Mark Cuban's Hot Wallet Hack",
+    description:
+      "Learn how the Compound Protocol was exploited, which resulted in a loss of $160 million.",
+    link: "#",
+  },
+];
+---
+
+<Container outerClass="tech insights corner">
+  <div class="content">
+    <div class="title">
+      <div class="left">
+        <img src="/assets/document.svg" alt="Document folder icon" />
+
+        <p class="title">Tech Insights Corner</p>
+
+        <p class="description">
+          Step into our Tech Insights Corner for in-depth analyses,
+          thought-provoking articles, and expert opinions on the intersection of
+          technology and business.
+        </p>
+      </div>
+
+      <a class="view all" href="#"> View All</a>
+    </div>
+
+    <div class="grid">
+      {
+        data.map((item) => (
+          <a class="item" href={item.link}>
+            <p class="title">{item.title}</p>
+            <p class="description">{item.description}</p>
+            <div class="read more">
+              <p>
+                Read More
+                <Icon variant="arrow-up-right" size="lg" />
+              </p>
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</Container>

@@ -1,8 +1,18 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import styles from "./index.scss?inline";
+
+import HomeHero from "@/modules/Home/HomeHero.astro";
+import WhyChooseUs from "@/modules/Home/WhyChooseUs.astro";
+import TechInsights from "@/modules/Home/TechInsights.astro";
 ---
 
 <BaseLayout>
+  <HomeHero />
+
+  <WhyChooseUs />
+
+  <TechInsights />
+
   <style slot="header" is:inline set:html={styles}></style>
 </BaseLayout>

@@ -1,0 +1,98 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.tech.insights.corner {
+  padding: 96px 0;
+  background-color: colors.$gray-iron-900;
+
+  .content {
+    background-color: colors.$rose-800;
+    padding: 56px;
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+
+      .left {
+        max-width: 768px;
+
+        img {
+          height: 77px;
+        }
+
+        p.title {
+          @include styles.display-md;
+          @include weights.semibold;
+          margin-top: 20px;
+          color: colors.$rose-25;
+        }
+
+        p.description {
+          margin-top: 20px;
+          @include styles.text-xl;
+          @include weights.regular;
+          color: colors.$rose-100;
+        }
+      }
+
+      a.view.all {
+        display: block;
+        background-color: colors.$rose-600;
+        padding: 12px 24px;
+        color: colors.$base-white;
+        @include styles.text-md;
+        @include weights.semibold;
+      }
+    }
+
+    .grid {
+      margin-top: 64px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+
+      a.item {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .title {
+          @include styles.text-md;
+          @include weights.semibold;
+          color: colors.$rose-25;
+        }
+
+        .description {
+          @include styles.text-sm;
+          @include weights.regular;
+          color: colors.$rose-300;
+        }
+
+        .read.more {
+          margin-top: auto;
+          p {
+            display: flex;
+            gap: 8px;
+            margin-top: 16px;
+
+            &,
+            * {
+              color: colors.$rose-200;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: colors.$rose-900;
+        }
+      }
+    }
+  }
+}

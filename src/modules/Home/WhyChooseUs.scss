@@ -1,0 +1,83 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.why.choose.us {
+  padding-top: 96px;
+  background-color: colors.$gray-iron-900;
+
+  .title {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: flex-start;
+
+    .text {
+      max-width: 768px;
+
+      p.title {
+        @include styles.display-md;
+        @include weights.semibold;
+        color: colors.$gray-iron-25;
+      }
+
+      p.subtitle {
+        @include styles.text-xl;
+        @include weights.regular;
+        color: colors.$gray-iron-200;
+        margin-top: 20px;
+      }
+    }
+
+    a.explore {
+      padding: 12px 24px;
+      border: 1px solid colors.$rose-600;
+      color: colors.$base-white;
+      @include styles.text-md;
+      @include weights.semibold;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 64px;
+
+    .item {
+      position: relative;
+
+      img {
+        height: 422px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .text {
+        padding: 32px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background-color: colors.$gray-iron-900;
+        width: min(100%, 344px);
+        min-height: 174px;
+
+        .title {
+          @include styles.text-xl;
+          @include weights.medium;
+          color: colors.$gray-iron-25;
+        }
+
+        .description {
+          @include styles.text-md;
+          @include weights.regular;
+          color: colors.$gray-iron-300;
+          margin-top: 8px;
+        }
+      }
+    }
+  }
+}

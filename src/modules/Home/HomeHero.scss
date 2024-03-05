@@ -1,0 +1,84 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.hero.container {
+  .content {
+    max-width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+
+    .subheading {
+      @include styles.text-xl;
+      @include weights.regular;
+      color: colors.$base-white;
+    }
+
+    .hero.title {
+      margin-top: 8px;
+    }
+
+    button {
+      margin-top: 48px;
+      border: 1px solid colors.$rose-600;
+      padding: 10px 24px;
+      color: colors.$base-white;
+    }
+  }
+
+  .grid {
+    margin-top: 140px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+
+    .card {
+      display: block;
+      padding: 32px;
+      background-color: colors.$gray-iron-700;
+
+      display: flex;
+      gap: 16px;
+
+      div.text {
+        p.title {
+          @include styles.text-md;
+          @include weights.semibold;
+          color: colors.$base-white;
+        }
+
+        p.description {
+          @include styles.text-sm;
+          @include weights.regular;
+          color: colors.$gray-iron-400;
+          margin-top: 10px;
+        }
+      }
+
+      i {
+        color: colors.$rose-500;
+      }
+
+      &:hover {
+        background-color: colors.$rose-700;
+
+        div.text {
+          p.title {
+            color: colors.$gray-iron-50;
+          }
+
+          p.description {
+            color: colors.$rose-200;
+          }
+        }
+
+        i {
+          color: colors.$rose-200;
+        }
+      }
+    }
+  }
+}

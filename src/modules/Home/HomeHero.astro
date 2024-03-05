@@ -1,0 +1,52 @@
+---
+import Hero from "@/components/Hero/Hero.astro";
+import Icon from "@/elements/Icon.astro";
+
+const data = [
+  {
+    title: "Explore Our Curated Content",
+    description:
+      "Stay updated with the latest industry insights, trends, and expert opinions to gain valuable knowledge.",
+    link: "#",
+  },
+  {
+    title: "Explore Our Knowledge Hub",
+    description:
+      "Dive into a wealth of knowledge! Our knowledge hub is a repository of articles, guides, and resources to help you navigate the tech landscape.",
+    link: "#",
+  },
+  {
+    title: "Innovations and Trends",
+    description:
+      "Discover the latest innovations and stay ahead of industry trends. Explore how Flux Fusion is shaping the future of technology.",
+    link: "#",
+  },
+];
+---
+
+<Hero>
+  <div class="content">
+    <p class="subheading">Welcome to Flux Fusion</p>
+    <p class="hero title">
+      Empowering businesses with cutting-edge technology, cybersecurity, and AI
+      solutions.
+    </p>
+
+    <button> Learn More</button>
+  </div>
+
+  <div class="grid">
+    {
+      data.map((item) => (
+        <a href={item.link} class="card">
+          <div class="text">
+            <p class="title">{item.title}</p>
+            <p class="description">{item.description}</p>
+          </div>
+
+          <Icon variant="arrow-up-right" size="xl" />
+        </a>
+      ))
+    }
+  </div>
+</Hero>

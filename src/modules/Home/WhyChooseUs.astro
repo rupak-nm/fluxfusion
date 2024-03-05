@@ -1,0 +1,54 @@
+---
+import Container from "@/components/Container/Container.astro";
+
+const data = [
+  {
+    title: "Advanced Security",
+    description:
+      "Protect your business with state-of-the-art cybersecurity measures.",
+    img: "/assets/advanced-security.png",
+  },
+  {
+    title: "AI Integration",
+    description:
+      "Harness the power of artificial intelligence for smarter and more efficient operations.",
+    img: "/assets/ai-integration.png",
+  },
+  {
+    title: "Innovative Solutions",
+    description:
+      "Stay ahead of the curve with our cutting-edge technological solutions.",
+    img: "/assets/innovative-solutions.png",
+  },
+];
+---
+
+<Container outerClass="why choose us">
+  <div class="title">
+    <div class="text">
+      <p class="title">Why Choose Flux Fusion?</p>
+      <p class="subtitle">
+        At Flux Fusion, we are committed to providing innovative solutions to
+        meet the challenges of the digital world. Our focus on technology,
+        cybersecurity, and AI sets us apart.
+      </p>
+    </div>
+
+    <a class="explore button"> Explore Solutions</a>
+  </div>
+
+  <div class="grid">
+    {
+      data.map((item) => (
+        <div class="item">
+          <img src={item.img} alt={item.title} />
+
+          <div class="text">
+            <p class="title">{item.title}</p>
+            <p class="description">{item.description}</p>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</Container>
