@@ -1,0 +1,74 @@
+---
+import Container from "@/components/Container/Container.astro";
+import { nav, socials } from "@/data/nav";
+import Icon from "@/elements/Icon.astro";
+
+interface Props {
+  noNewsletter?: boolean;
+}
+
+const { noNewsletter } = Astro.props;
+const logoSrc = `/assets/logo.svg`;
+---
+
+<div class="footer wrapper">
+  {
+    !noNewsletter && (
+      <Container outerClass="newsletter">
+        <div class="content">
+          <p class="heading">
+            <span>Stay Informed</span> with Flux Fusion
+          </p>
+          <p class="subheading">
+            Get the latest updates, news, and announcements. Stay informed about
+            Flux Fusion's achievements, partnerships, and upcoming events.
+          </p>
+        </div>
+
+        <form>
+          <div class="row">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </div>
+          <p class="message" />
+        </form>
+      </Container>
+    )
+  }
+
+  <Container outerClass="footer">
+    <footer>
+      <div class="content">
+        <img src={logoSrc} alt="FluxFusion logo" />
+
+        <p class="heading">Your Partner in Cybersecurity and AI Innovation</p>
+
+        <ul class="socials">
+          {
+            socials.map((social) => (
+              <li>
+                <a href={social.link} target="_blank" rel="noopener noreferrer">
+                  <Icon variant={social.icon} size="xl" />
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+
+        <ul class="links">
+          {
+            nav.map((link) => (
+              <li>
+                <a href={link.href}>{link.name}</a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <hr />
+
+      <p class="copyright">© 2077 Untitled UI. All rights reserved.</p>
+    </footer>
+  </Container>
+</div>

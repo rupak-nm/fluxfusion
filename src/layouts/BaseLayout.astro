@@ -1,0 +1,43 @@
+---
+import Header from "@/components/Header/Header.astro";
+import Footer from "@/components/Footer/Footer.astro";
+
+const server = import.meta.env.FORMS_API_SERVER;
+
+interface Props {
+  noHeader?: boolean;
+  noFooter?: boolean;
+  noNewsletter?: boolean;
+}
+
+const { noNewsletter, noHeader, noFooter } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <slot name="seo" />
+    <slot name="header" />
+    <script
+      type="text/javascript"
+      nonce="j+h4QPo2G1leKJxLFUVrGw=="
+      define:vars={{ server }}
+    >
+      window.server = server;
+    </script>
+  </head>
+  <body>
+    <main>
+      {!noHeader && <Header />}
+
+      <slot />
+
+      {!noFooter && <Footer noNewsletter={noNewsletter} />}
+    </main>
+
+    <slot name="footer" />
+  </body>
+</html>

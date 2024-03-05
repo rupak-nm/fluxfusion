@@ -1,0 +1,14 @@
+---
+interface Props {
+  outerClass?: string;
+  className?: string;
+}
+
+const { outerClass = "", className = "" }: Props = Astro.props;
+---
+
+<div class=`container component wrapper ${outerClass}`>
+  <div class=`inner ${className}`>
+    <slot />
+  </div>
+</div>

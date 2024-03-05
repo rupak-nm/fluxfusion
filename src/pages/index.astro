@@ -1,0 +1,8 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import styles from "./index.scss?inline";
+---
+
+<BaseLayout>
+  <style slot="header" is:inline set:html={styles}></style>
+</BaseLayout>
