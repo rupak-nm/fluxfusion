@@ -17,7 +17,7 @@
       "@/elements/*": ["src/elements/*"],
       "@/design-system/*": ["src/design-system/*"],
       "@/styles/*": ["src/styles/*"],
-      // "@/scripts/*": ["src/scripts/*"],
+      "@/scripts/*": ["src/scripts/*"],
     }
   }
 }

@@ -81,6 +81,28 @@
           }
         }
       }
+
+      p.message {
+        @include styles.text-sm;
+        max-width: 100%;
+        text-align: left;
+
+        &[data-type="error"] {
+          color: colors.$error-300;
+        }
+
+        &[data-type="success"] {
+          color: colors.$success-300;
+        }
+
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+
+        &:empty {
+          display: none;
+        }
+      }
     }
 
     @media (max-width: 767px) {

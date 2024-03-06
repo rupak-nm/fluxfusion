@@ -1,0 +1,136 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.contact.us.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  .left {
+    background-color: colors.$gray-iron-900;
+    padding: 90px 80px;
+
+    .text {
+      .heading {
+        @include styles.display-xl;
+        @include weights.semibold;
+        color: colors.$base-white;
+      }
+
+      .subheading {
+        @include styles.text-lg;
+        @include weights.regular;
+        color: colors.$gray-iron-200;
+        margin-top: 8px;
+      }
+    }
+
+    .address {
+      margin-top: 56px;
+
+      i svg {
+        height: 24px;
+      }
+
+      div {
+        margin-top: 16px;
+
+        p {
+          @include styles.text-lg;
+          @include weights.regular;
+          color: colors.$gray-iron-200;
+        }
+      }
+    }
+  }
+
+  .right {
+    background-color: colors.$rose-800;
+    padding: 96px 104px;
+
+    text-align: center;
+
+    i svg {
+      height: 100px;
+      margin: 0 auto;
+    }
+
+    form {
+      text-align: left;
+      margin-top: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+
+      .row {
+        display: flex;
+        gap: 32px;
+
+        .input {
+          width: 100%;
+        }
+      }
+
+      .select[data-with-input="true"] {
+        select {
+          width: max-content;
+          min-width: 100px;
+        }
+      }
+
+      .checkbox.group {
+        .label {
+          @include styles.text-sm;
+          @include weights.medium;
+          color: colors.$gray-iron-200;
+        }
+
+        .checkboxes {
+          margin-top: 16px;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 16px;
+          column-gap: 32px;
+          color: colors.$gray-iron-200;
+        }
+      }
+
+      .captcha.field,
+      button.submit {
+        margin-top: 8px;
+      }
+
+      button.submit {
+        padding: 12px 20px;
+        background-color: colors.$rose-600;
+        color: colors.$base-white;
+        width: 100%;
+
+        &:disabled {
+          opacity: 0.5;
+          cursor: not-allowed;
+        }
+      }
+
+      p.message {
+        @include styles.text-sm;
+        @include weights.semibold;
+
+        &[data-type="error"] {
+          color: colors.$error-300;
+        }
+
+        &[data-type="success"] {
+          color: colors.$success-500;
+        }
+
+        &:empty {
+          display: none;
+        }
+      }
+    }
+  }
+}

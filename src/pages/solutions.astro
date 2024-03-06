@@ -9,4 +9,8 @@ import SolutionsPage from "../modules/Solutions/SolutionsPage.astro";
   <SolutionsPage />
 
   <style slot="header" is:inline set:html={styles}></style>
+
+  <Fragment slot="footer">
+    <script src="@/scripts/newsletter/index.js"></script>
+  </Fragment>
 </BaseLayout>

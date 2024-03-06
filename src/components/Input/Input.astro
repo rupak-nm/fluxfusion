@@ -1,0 +1,38 @@
+---
+interface Props
+  extends astroHTML.JSX.InputHTMLAttributes,
+    astroHTML.JSX.TextareaHTMLAttributes,
+    astroHTML.JSX.SelectHTMLAttributes {
+  label?: string;
+  options?: string[];
+  textarea?: boolean;
+  selectWithInput?: astroHTML.JSX.InputHTMLAttributes;
+}
+
+const { options, textarea, label, selectWithInput, ...props } = Astro.props;
+---
+
+<div class="input component">
+  {
+    label ? (
+      <label for={selectWithInput?.id || props.id || "input"}>{label}</label>
+    ) : null
+  }
+
+  {
+    textarea ? (
+      <textarea {...props} />
+    ) : options ? (
+      <div class="select" data-with-input={selectWithInput ? "true" : "false"}>
+        <select {...props}>
+          {options?.map((option) => (
+            <option value={option}>{option}</option>
+          ))}
+        </select>
+        {selectWithInput ? <input {...selectWithInput} /> : null}
+      </div>
+    ) : (
+      <input {...props} />
+    )
+  }
+</div>

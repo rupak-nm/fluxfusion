@@ -130,6 +130,9 @@ const paths: Path = {
   "github-white": import("./variants/Socials/svg/white/GitHub.svg?raw"),
 
   "arrow-up-right": import("./variants/Arrows/arrow-up-right.svg?raw"),
+
+  "location-marker": import("./custom/location-marker.svg?raw"),
+  "envelope": import("./custom/envelope.svg?raw"),
 };
 
 export { paths };
