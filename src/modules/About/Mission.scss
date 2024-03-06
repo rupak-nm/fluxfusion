@@ -1,0 +1,40 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.about.mission.container {
+  padding-top: 96px;
+
+  img {
+    height: 366px;
+    width: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  .content {
+    margin-top: -4px;
+    padding: 48px;
+    background-color: colors.$rose-800;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+
+    .title {
+      @include styles.display-xs;
+      @include weights.semibold;
+      color: colors.$rose-25;
+    }
+
+    .text {
+      @include styles.text-xl;
+      @include weights.regular;
+      color: colors.$rose-100;
+      margin-top: 8px;
+    }
+  }
+}

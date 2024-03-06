@@ -101,6 +101,7 @@ button,
 
 // container styles
 .container.component.wrapper {
+  background-color: colors.$gray-iron-900;
   .inner {
     @include utils.full-width-container;
   }

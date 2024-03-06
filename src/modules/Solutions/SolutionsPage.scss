@@ -1,0 +1,57 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.solutions.hero {
+  padding: 168px 0 226px !important;
+  &::after {
+    background-image: url("/assets/solutions-hero.png") !important;
+  }
+}
+
+.grid.inner {
+  padding-top: 96px;
+  padding-bottom: 96px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+
+  .card {
+    display: flex;
+
+    .content {
+      background-color: colors.$rose-800;
+      padding: 56px;
+
+      .title {
+        @include styles.text-xl;
+        @include weights.regular;
+        color: colors.$base-white;
+      }
+
+      .description {
+        @include styles.display-xs;
+        @include weights.medium;
+        color: colors.$rose-50;
+        margin-top: 20px;
+      }
+
+      img {
+        margin-top: 20px;
+        height: 80px;
+      }
+    }
+
+    & > img {
+      display: block;
+      width: 520px;
+      height: 380px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+  }
+}

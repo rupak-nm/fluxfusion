@@ -4,10 +4,10 @@ interface Props {
   className?: string;
 }
 
-const { outerClass = "", className = "" }: Props = Astro.props;
+const { outerClass = "", className = "", ...rest }: Props = Astro.props;
 ---
 
-<div class=`container component wrapper ${outerClass}`>
+<div class=`container component wrapper ${outerClass}` {...rest}>
   <div class=`inner ${className}`>
     <slot />
   </div>

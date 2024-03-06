@@ -1,0 +1,57 @@
+---
+import Hero from "@/components/Hero/Hero.astro";
+
+const images = [
+  {
+    src: "/assets/team/1.png",
+    alt: "Team member 1",
+  },
+  {
+    src: "/assets/team/2.png",
+    alt: "Team member 2",
+  },
+  {
+    src: "/assets/team/3.png",
+    alt: "Team member 3",
+  },
+  {
+    src: "/assets/team/4.png",
+    alt: "Team member 4",
+  },
+  {
+    src: "/assets/team/5.png",
+    alt: "Team member 5",
+  },
+  {
+    src: "/assets/team/6.png",
+    alt: "Team member 6",
+  },
+  {
+    src: "/assets/team/7.png",
+    alt: "Team member 7",
+  },
+  {
+    src: "/assets/team/8.png",
+    alt: "Team member 8",
+  },
+];
+---
+
+<Hero className="about">
+  <div class="content">
+    <p class="subheading">About Us</p>
+    <p class="heading">
+      Welcome to Flux Fusion, where innovation meets cybersecurity excellence.
+      We are a dedicated team passionate about securing the digital future of
+      businesses through state-of-the-art AI-driven solutions.
+    </p>
+
+    <div class="flex">
+      {
+        images.map((image) => (
+          <img src={image.src} alt={image.alt} class="team-member" />
+        ))
+      }
+    </div>
+  </div>
+</Hero>

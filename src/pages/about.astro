@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import styles from "./about.scss?inline";
+
+import AboutHero from "../modules/About/AboutHero.astro";
+import Mission from "../modules/About/Mission.astro";
+import OurTeam from "../modules/About/OurTeam.astro";
+---
+
+<BaseLayout>
+  <AboutHero />
+
+  <Mission />
+
+  <OurTeam />
+
+  <style slot="header" is:inline set:html={styles}></style>
+</BaseLayout>

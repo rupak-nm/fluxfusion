@@ -1,0 +1,43 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.about.hero {
+  padding: 144px 0 202px !important;
+
+  &::after {
+    background-image: url("/assets/about-hero.png") !important;
+  }
+
+  .content {
+    max-width: 1024px;
+    margin: 0 auto;
+
+    .subheading {
+      @include styles.text-xl;
+      @include weights.regular;
+      color: colors.$base-white;
+    }
+
+    .heading {
+      margin-top: 8px;
+      @include styles.display-sm;
+      @include weights.medium;
+      color: colors.$gray-iron-25;
+    }
+
+    .flex {
+      margin-top: 48px;
+      display: flex;
+      gap: 14px;
+
+      img {
+        height: 56px;
+        width: 56px;
+      }
+    }
+  }
+}

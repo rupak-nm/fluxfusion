@@ -1,0 +1,12 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import styles from "./solutions.scss?inline";
+
+import SolutionsPage from "../modules/Solutions/SolutionsPage.astro";
+---
+
+<BaseLayout>
+  <SolutionsPage />
+
+  <style slot="header" is:inline set:html={styles}></style>
+</BaseLayout>

@@ -1,0 +1,47 @@
+---
+import Hero from "@/components/Hero/Hero.astro";
+import Container from "@/components/Container/Container.astro";
+
+const data = [
+  {
+    title: "AI-Powered Threat Detection",
+    description:
+      "Utilize cutting-edge AI algorithms for real-time threat detection and analysis, ensuring robust cybersecurity.",
+    image: "/assets/advanced-security.png",
+    logo: "/assets/magnifying.svg",
+  },
+  {
+    title: "AI Integration",
+    description:
+      "Harness the power of artificial intelligence for smarter and more efficient operations.",
+    image: "/assets/ai-integration.png",
+    logo: "/assets/lightbulb.svg",
+  },
+  {
+    title: "Innovative Solutions",
+    description:
+      "Stay ahead of the curve with our cutting-edge technological solutions.",
+    image: "/assets/innovative-solutions.png",
+    logo: "/assets/book.svg",
+  },
+];
+---
+
+<Hero className="solutions">
+  <p class="hero title">Our Solutions</p>
+</Hero>
+
+<Container className="grid">
+  {
+    data.map((item) => (
+      <div class="card">
+        <div class="content">
+          <p class="title">{item.title}</p>
+          <p class="description">{item.description}</p>
+          <img src={item.logo} alt={item.title} />
+        </div>
+        <img src={item.image} alt={item.title} />
+      </div>
+    ))
+  }
+</Container>

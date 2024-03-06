@@ -13,5 +13,6 @@
     @include styles.display-xl;
     @include weights.semibold;
     color: colors.$gray-iron-25;
+    text-align: center;
   }
 }
