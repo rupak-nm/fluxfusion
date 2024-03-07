@@ -1,0 +1,43 @@
+---
+import type { Link } from "../../data/legal";
+import Icon from "@/elements/Icon.astro";
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props;
+---
+
+<div class="toc component">
+  <p class="title">Table of Contents</p>
+
+  <hr />
+
+  <ul>
+    {
+      links.map((link) => (
+        <li>
+          <div class="row">
+            <a href={`#${link.hash}`}>{link.name}</a>
+            {link.links && (
+              <button data-open="true" data-id={link.hash}>
+                <Icon variant="chevron-down" />
+              </button>
+            )}
+          </div>
+
+          {link.links && (
+            <ul data-open="true" data-id={link.hash}>
+              {link.links.map((sublink) => (
+                <li>
+                  <a href={`#${sublink.hash}`}>{sublink.name}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</div>

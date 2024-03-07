@@ -1,0 +1,62 @@
+@use "@/design-system/theme/light" as light-theme;
+@use "@/design-system/utils";
+@use "@/design-system/colors";
+@use "@/design-system/shadows";
+@use "@/design-system/typography/styles";
+@use "@/design-system/typography/weights";
+
+.legal.hero {
+  padding: 168px 0 226px !important;
+
+  &::after {
+    background-image: url("/assets/legal-hero.png") !important;
+  }
+}
+
+.legal.contents.inner {
+  padding-top: 96px;
+  padding-bottom: 96px;
+
+  display: flex;
+  gap: 64px;
+
+  .right {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    p,
+    li {
+      @include styles.text-lg;
+      @include weights.regular;
+      color: colors.$gray-iron-200;
+    }
+
+    .title {
+      @include styles.text-lg;
+      @include weights.semibold;
+      color: colors.$gray-iron-25;
+    }
+
+    .heading {
+      @include styles.display-xs;
+      @include weights.semibold;
+      color: colors.$gray-iron-25;
+    }
+
+    div.item {
+      .description {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        ul {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

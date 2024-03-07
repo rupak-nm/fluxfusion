@@ -1,0 +1,42 @@
+---
+import Hero from "@/components/Hero/Hero.astro";
+import Container from "@/components/Container/Container.astro";
+import TableOfContents from "../../components/TableOfContents/TableOfContents.astro";
+import { tocData, data } from "@/data/legal.ts";
+---
+
+<Hero className="legal">
+  <p class="hero title">Legal</p>
+</Hero>
+
+<Container className="legal contents">
+  <TableOfContents links={tocData} />
+
+  <div class="right">
+    {
+      data.map((item) => (
+        <div class="item">
+          <p class={item.isHeading ? "heading" : "title"} id={item.id}>
+            {item.title}
+          </p>
+
+          {item.description && (
+            <div class="description">
+              {item.description.map((desc) =>
+                Array.isArray(desc) ? (
+                  <ul>
+                    {desc.map((li) => (
+                      <li>{li}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p>{desc}</p>
+                )
+              )}
+            </div>
+          )}
+        </div>
+      ))
+    }
+  </div>
+</Container>

@@ -48,7 +48,7 @@ header.site.header {
           color: colors.$gray-iron-200;
 
           &.active {
-            @include weights.semibold;
+            @include weights.bold;
           }
 
           &[data-style="button"] {

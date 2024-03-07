@@ -1,17 +1,17 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import styles from "./solutions.scss?inline";
+import styles from "./legal.scss?inline";
 
-import SolutionsPage from "../modules/Solutions/SolutionsPage.astro";
+import LegalPage from "../modules/Legal/LegalPage.astro";
 ---
 
-<BaseLayout>
-  <SolutionsPage />
+<BaseLayout noNewsletter>
+  <LegalPage />
 
   <style slot="header" is:inline set:html={styles}></style>
 
   <Fragment slot="footer">
     <script src="@/scripts/header/nav.js"></script>
-    <script src="@/scripts/newsletter/index.js"></script>
+    <script src="@/scripts/legal/toc.js"></script>
   </Fragment>
 </BaseLayout>
