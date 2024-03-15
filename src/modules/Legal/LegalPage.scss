@@ -20,12 +20,18 @@
   display: flex;
   gap: 64px;
 
+  .toc.component {
+    padding-top: 8px;
+  }
+
   .right {
     flex: 1;
 
     display: flex;
     flex-direction: column;
     gap: 32px;
+
+    padding-top: 8px;
 
     p,
     li {

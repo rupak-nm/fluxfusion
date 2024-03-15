@@ -58,27 +58,19 @@
           @include weights.semibold;
           color: colors.$base-white;
         }
+      }
 
-        p.message {
-          @include styles.text-sm;
-          max-width: 100%;
-          text-align: left;
+      p.helper {
+        @include styles.text-sm;
+        margin-top: 6px;
 
-          &[data-type="error"] {
-            color: colors.$error-300;
-          }
+        &,
+        a {
+          color: colors.$gray-iron-400;
+        }
 
-          &[data-type="success"] {
-            color: colors.$success-300;
-          }
-
-          position: absolute;
-          top: calc(100% + 8px);
-          left: 0;
-
-          &:empty {
-            display: none;
-          }
+        a {
+          text-decoration: underline;
         }
       }
 
@@ -141,6 +133,10 @@
       max-width: 600px;
       margin: auto;
 
+      img {
+        height: 40px;
+      }
+
       p.heading {
         @include styles.display-sm;
         @include weights.semibold;
@@ -187,61 +183,57 @@
   }
 
   @media (max-width: 767px) {
-    .wrapper:is(:last-child) {
-      padding: 0;
-    }
+    .newsletter.container {
+      padding-top: 32px;
+      padding-bottom: 88px;
 
-    footer {
-      text-align: left;
-      padding: 48px 16px 24px;
-      border-radius: 0;
+      .content {
+        .heading {
+          @include styles.display-sm;
+        }
 
-      img {
-        height: 32px;
-      }
-
-      p.heading {
-        @include styles.h3;
-      }
-
-      div.links {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        align-items: flex-start;
-        margin-left: 0;
-
-        & > div {
-          * {
-            @include styles.text-md;
-          }
-
-          p.title {
-            @include weights.semibold;
-          }
-
-          ul {
-            margin-top: 16px;
-          }
+        .subheading {
+          @include styles.text-md;
         }
       }
 
-      div.warning {
-        div.other {
+      form {
+        margin-top: 32px;
+
+        .row {
           flex-direction: column;
-          margin-top: 16px;
-          align-items: flex-start;
           gap: 16px;
 
-          p,
-          a {
-            text-align: center;
-          }
-
-          div.socials {
-            margin-top: 16px;
-            margin-left: 0;
+          input,
+          button {
+            width: 100%;
           }
         }
+
+        p.helper {
+          margin-top: 16px;
+          text-align: center;
+        }
+      }
+    }
+
+    .footer.container {
+      padding-top: 64px;
+
+      .content {
+        ul {
+          &.links {
+            justify-content: space-between;
+          }
+        }
+      }
+
+      hr {
+        margin: 64px 0 32px;
+      }
+
+      p.copyright {
+        padding-bottom: 16px;
       }
     }
   }

@@ -26,6 +26,8 @@
       border: 1px solid colors.$rose-600;
       padding: 10px 24px;
       color: colors.$base-white;
+      @include styles.text-md;
+      @include weights.semibold;
     }
   }
 
@@ -79,6 +81,30 @@
           color: colors.$rose-200;
         }
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .content {
+      text-align: left;
+
+      .subheading {
+        @include styles.text-lg;
+      }
+
+      .hero.title {
+        margin-top: 16px;
+      }
+
+      button {
+        margin-top: 32px;
+        width: 100%;
+      }
+    }
+
+    .grid {
+      margin-top: 64px;
+      grid-template-columns: 1fr;
     }
   }
 }

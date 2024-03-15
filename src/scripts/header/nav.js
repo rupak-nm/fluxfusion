@@ -1,3 +1,5 @@
+import initMobileMenu from "./mobile-menu";
+
 const headerElement = document.querySelector("header.site.header");
 
 const allAnchorElements = headerElement.querySelectorAll("a");
@@ -18,3 +20,4 @@ function updateActiveLink() {
 }
 
 updateActiveLink();
+initMobileMenu();

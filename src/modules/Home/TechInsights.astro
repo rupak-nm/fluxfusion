@@ -1,4 +1,7 @@
 ---
+import "swiper/css";
+import "swiper/css/pagination";
+
 import Container from "@/components/Container/Container.astro";
 import Icon from "@/elements/Icon.astro";
 
@@ -57,6 +60,29 @@ const data = [
           </a>
         ))
       }
+    </div>
+
+    <div class="mobile swiper">
+      <div class="swiper-wrapper">
+        {
+          data.map((item) => (
+            <div class="swiper-slide">
+              <a class="item" href={item.link}>
+                <p class="title">{item.title}</p>
+                <p class="description">{item.description}</p>
+                <div class="read more">
+                  <p>
+                    Read More
+                    <Icon variant="arrow-up-right" size="lg" />
+                  </p>
+                </div>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="swiper-pagination"></div>
     </div>
   </div>
 </Container>

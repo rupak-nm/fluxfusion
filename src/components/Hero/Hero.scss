@@ -15,4 +15,13 @@
     color: colors.$gray-iron-25;
     text-align: center;
   }
+
+  @media (max-width: 767px) {
+    padding: 32px 0 56px;
+
+    p.hero.title {
+      @include styles.display-sm;
+      text-align: left;
+    }
+  }
 }

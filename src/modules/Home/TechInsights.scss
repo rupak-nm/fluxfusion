@@ -48,6 +48,7 @@
         color: colors.$base-white;
         @include styles.text-md;
         @include weights.semibold;
+        white-space: nowrap;
       }
     }
 
@@ -56,41 +57,105 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+    }
 
-      a.item {
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
+    .mobile.swiper {
+      display: none;
+    }
 
-        .title {
-          @include styles.text-md;
-          @include weights.semibold;
-          color: colors.$rose-25;
-        }
+    a.item {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
 
-        .description {
+      .title {
+        @include styles.text-md;
+        @include weights.semibold;
+        color: colors.$rose-25;
+      }
+
+      .description {
+        @include styles.text-sm;
+        @include weights.regular;
+        color: colors.$rose-300;
+      }
+
+      .read.more {
+        margin-top: auto;
+
+        p {
+          display: flex;
+          gap: 8px;
+          margin-top: 16px;
+
           @include styles.text-sm;
-          @include weights.regular;
-          color: colors.$rose-300;
+          @include weights.semibold;
+
+          &,
+          * {
+            color: colors.$rose-200;
+          }
         }
+      }
 
-        .read.more {
-          margin-top: auto;
-          p {
-            display: flex;
-            gap: 8px;
-            margin-top: 16px;
+      &:hover {
+        background-color: colors.$rose-900;
+      }
+    }
+  }
 
-            &,
-            * {
-              color: colors.$rose-200;
-            }
+  @media (max-width: 767px) {
+    padding: 0 0 56px;
+
+    .content {
+      padding: 16px;
+
+      .title {
+        flex-direction: column;
+        gap: 32px;
+
+        .left {
+          p.title {
+            @include styles.text-xl;
+          }
+
+          p.description {
+            @include styles.text-md;
+            margin-top: 8px;
           }
         }
 
-        &:hover {
-          background-color: colors.$rose-900;
+        a.view.all {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .grid {
+        display: none;
+      }
+
+      .mobile.swiper {
+        display: block;
+        margin-top: 32px;
+
+        .swiper-pagination {
+          position: relative;
+          margin-top: 16px;
+
+          span.swiper-pagination-bullet-active {
+            background-color: colors.$rose-400;
+          }
+        }
+      }
+
+      a.item {
+        padding: 16px;
+        gap: 8px;
+
+        .read.more {
+          margin-top: 40px;
         }
       }
     }

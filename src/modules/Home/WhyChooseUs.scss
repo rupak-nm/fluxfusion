@@ -49,6 +49,7 @@
 
     .item {
       position: relative;
+      display: flex;
 
       img {
         height: 422px;
@@ -76,6 +77,57 @@
           @include weights.regular;
           color: colors.$gray-iron-300;
           margin-top: 8px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 0px;
+    padding-bottom: 56px;
+
+    .title {
+      flex-direction: column;
+      gap: 48px;
+
+      .text {
+        p.title {
+          @include styles.display-sm;
+        }
+
+        p.subtitle {
+          @include styles.text-md;
+          margin-top: 24px;
+        }
+      }
+
+      a.explore {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    .grid {
+      margin-top: 48px;
+      grid-template-columns: 1fr;
+
+      .item {
+        img {
+          height: 258px;
+        }
+
+        .text {
+          padding: 16px;
+          width: 285px;
+          min-height: 128px;
+
+          .title {
+            @include styles.text-lg;
+          }
+
+          .description {
+            @include styles.text-sm;
+          }
         }
       }
     }

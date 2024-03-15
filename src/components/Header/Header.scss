@@ -16,8 +16,8 @@ header.site.header {
   top: 0;
 
   .inner {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 22px;
+    padding-bottom: 22px;
 
     display: flex;
     justify-content: space-between;
@@ -30,7 +30,7 @@ header.site.header {
       justify-content: center;
 
       img {
-        height: 48px;
+        height: 32px;
       }
     }
 
@@ -48,7 +48,8 @@ header.site.header {
           color: colors.$gray-iron-200;
 
           &.active {
-            @include weights.bold;
+            @include weights.extrabold;
+            color: colors.$rose-600;
           }
 
           &[data-style="button"] {
@@ -75,6 +76,7 @@ header.site.header {
         align-items: center;
         padding: 8px;
         border-radius: 4px;
+        color: colors.$base-white;
 
         &:hover {
           background-color: rgba(colors.$gray-900, 0.1);
@@ -96,6 +98,13 @@ header.site.header {
           }
         }
       }
+    }
+  }
+
+  @media (max-width: 767px) {
+    .inner {
+      padding-top: 16px;
+      padding-bottom: 16px;
     }
   }
 }

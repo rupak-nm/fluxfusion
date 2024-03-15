@@ -1,0 +1,17 @@
+---
+import { nav } from "@/data/nav";
+---
+
+<div class="mobile menu container" data-open="false">
+  <ul>
+    {
+      nav.map(({ name, href, isButton }) => (
+        <li>
+          <a href={href} data-style={isButton && "button"}>
+            {name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</div>
