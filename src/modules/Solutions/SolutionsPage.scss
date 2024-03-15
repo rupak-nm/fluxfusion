@@ -10,6 +10,14 @@
   &::after {
     background-image: url("/assets/solutions-hero.png") !important;
   }
+
+  @media (max-width: 767px) {
+    padding: 74px 0 106px !important;
+
+    .inner .hero.title {
+      text-align: center !important;
+    }
+  }
 }
 
 .grid.inner {
@@ -52,6 +60,40 @@
       height: 380px;
       object-fit: cover;
       flex-shrink: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 32px;
+    padding-bottom: 88px;
+
+    grid-template-columns: 1fr;
+
+    .card {
+      flex-direction: column-reverse;
+
+      .content {
+        padding: 16px;
+
+        .title {
+          @include styles.text-md;
+        }
+
+        .description {
+          @include styles.text-lg;
+          margin-top: 30px;
+        }
+
+        img {
+          margin-top: 30px;
+          height: 40px;
+        }
+      }
+
+      & > img {
+        width: 100%;
+        height: 140px;
+      }
     }
   }
 }
