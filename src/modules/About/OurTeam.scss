@@ -38,9 +38,35 @@
       background-color: colors.$rose-800;
 
       img {
-        width: 88px;
         height: 88px;
+        aspect-ratio: 1 / 1;
+        object-fit: contain;
         border-radius: 50%;
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    padding: 32px 0;
+
+    .text {
+      .title {
+        @include styles.display-sm;
+      }
+
+      .description {
+        @include styles.text-md;
+      }
+    }
+
+    .team {
+      padding: 0 12px;
+      width: max-content;
+      margin: 32px auto 0;
+      grid-template-columns: repeat(2, 1fr);
+
+      .card {
+        max-width: 136px;
       }
     }
   }

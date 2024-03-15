@@ -37,4 +37,22 @@
       margin-top: 8px;
     }
   }
+
+  @media (max-width: 767px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+    img {
+      height: 278px;
+    }
+
+    .content {
+      padding: 16px;
+      grid-template-columns: 1fr;
+
+      .text {
+        @include styles.text-md;
+      }
+    }
+  }
 }
