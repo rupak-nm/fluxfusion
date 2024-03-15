@@ -77,7 +77,6 @@
       .select[data-with-input="true"] {
         select {
           width: max-content;
-          min-width: 100px;
         }
       }
 
@@ -129,6 +128,71 @@
 
         &:empty {
           display: none;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+
+    .left {
+      padding: 16px;
+
+      .text {
+        .heading {
+          @include styles.display-sm;
+        }
+
+        .subheading {
+          @include styles.text-md;
+        }
+      }
+
+      .address {
+        margin-top: 32px;
+
+        i svg {
+          height: 32px;
+        }
+
+        div {
+          p {
+            @include styles.text-md;
+          }
+        }
+      }
+    }
+
+    .right {
+      padding: 66px 16px;
+
+      i svg {
+        height: 80px;
+      }
+
+      form {
+        margin-top: 32px;
+        gap: 24px;
+
+        .row {
+          flex-direction: column;
+          gap: 24px;
+
+          .input {
+            width: 100%;
+          }
+        }
+
+        .checkbox.group {
+          .checkboxes {
+            grid-template-columns: 1fr;
+            row-gap: 16px;
+          }
+        }
+
+        button.submit {
+          padding: 12px 0;
         }
       }
     }
