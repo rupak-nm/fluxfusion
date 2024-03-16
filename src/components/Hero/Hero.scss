@@ -6,7 +6,7 @@
 @use "@/design-system/typography/weights";
 
 .hero.component.container {
-  @include utils.custom-background("/assets/home-hero.png");
+  @include utils.custom-background("/assets/home-hero.webp");
   padding: 96px 0 56px;
 
   p.hero.title {

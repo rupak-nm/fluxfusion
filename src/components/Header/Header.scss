@@ -52,6 +52,10 @@ header.site.header {
             color: colors.$rose-600;
           }
 
+          &:hover:not(.active):not([data-style="button"]) {
+            color: colors.$gray-iron-400;
+          }
+
           &[data-style="button"] {
             padding: 8px 24px;
             display: block;

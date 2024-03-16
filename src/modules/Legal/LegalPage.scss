@@ -9,7 +9,15 @@
   padding: 168px 0 226px !important;
 
   &::after {
-    background-image: url("/assets/legal-hero.png") !important;
+    background-image: url("/assets/legal-hero.webp") !important;
+  }
+
+  @media (max-width: 767px) {
+    padding: 74px 0 106px !important;
+
+    .inner .hero.title {
+      text-align: center !important;
+    }
   }
 }
 

@@ -5,9 +5,19 @@ import styles from "./about.scss?inline";
 import AboutHero from "../modules/About/AboutHero.astro";
 import Mission from "../modules/About/Mission.astro";
 import OurTeam from "../modules/About/OurTeam.astro";
+import Seo from "@/components/Seo.astro";
 ---
 
 <BaseLayout>
+  <Seo
+    slot="seo"
+    title="About Us | FluxFusion"
+    description=""
+    og={{
+      image: "/assets/images/meta/og/home.png",
+      imageAlt: "FluxFusion Open Graph Banner",
+    }}
+  />
   <AboutHero />
 
   <Mission />

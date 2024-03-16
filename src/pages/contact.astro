@@ -3,9 +3,19 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import styles from "./contact.scss?inline";
 
 import ContactPage from "../modules/Contact/ContactPage.astro";
+import Seo from "@/components/Seo.astro";
 ---
 
 <BaseLayout noFooter>
+  <Seo
+    slot="seo"
+    title="Contact Us | FluxFusion"
+    description=""
+    og={{
+      image: "/assets/images/meta/og/home.png",
+      imageAlt: "FluxFusion Open Graph Banner",
+    }}
+  />
   <ContactPage />
 
   <style slot="header" is:inline set:html={styles}></style>

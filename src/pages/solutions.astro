@@ -3,9 +3,19 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import styles from "./solutions.scss?inline";
 
 import SolutionsPage from "../modules/Solutions/SolutionsPage.astro";
+import Seo from "@/components/Seo.astro";
 ---
 
 <BaseLayout>
+  <Seo
+    slot="seo"
+    title="Solutions | FluxFusion"
+    description=""
+    og={{
+      image: "/assets/images/meta/og/home.png",
+      imageAlt: "FluxFusion Open Graph Banner",
+    }}
+  />
   <SolutionsPage />
 
   <style slot="header" is:inline set:html={styles}></style>

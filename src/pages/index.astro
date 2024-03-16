@@ -5,9 +5,19 @@ import styles from "./index.scss?inline";
 import HomeHero from "@/modules/Home/HomeHero.astro";
 import WhyChooseUs from "@/modules/Home/WhyChooseUs.astro";
 import TechInsights from "@/modules/Home/TechInsights.astro";
+import Seo from "@/components/Seo.astro";
 ---
 
 <BaseLayout>
+  <Seo
+    slot="seo"
+    title="FluxFusion"
+    description=""
+    og={{
+      image: "/assets/images/meta/og/home.png",
+      imageAlt: "FluxFusion Open Graph Banner",
+    }}
+  />
   <HomeHero />
 
   <WhyChooseUs />

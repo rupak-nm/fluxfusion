@@ -3,9 +3,19 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import styles from "./legal.scss?inline";
 
 import LegalPage from "../modules/Legal/LegalPage.astro";
+import Seo from "@/components/Seo.astro";
 ---
 
 <BaseLayout noNewsletter>
+  <Seo
+    slot="seo"
+    title="Legal | FluxFusion"
+    description=""
+    og={{
+      image: "/assets/images/meta/og/home.png",
+      imageAlt: "FluxFusion Open Graph Banner",
+    }}
+  />
   <LegalPage />
 
   <style slot="header" is:inline set:html={styles}></style>

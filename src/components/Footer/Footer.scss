@@ -63,6 +63,7 @@
       p.helper {
         @include styles.text-sm;
         margin-top: 6px;
+        text-align: left;
 
         &,
         a {
@@ -124,7 +125,7 @@
   }
 
   .footer.container {
-    @include utils.custom-background("/assets/footer-bg.png");
+    @include utils.custom-background("/assets/footer-bg.webp");
     text-align: center;
     padding-top: 72px;
     color: colors.$gray-iron-25;
