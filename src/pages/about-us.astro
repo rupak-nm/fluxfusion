@@ -1,22 +1,28 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import styles from "./solutions.scss?inline";
+import styles from "./about-us.scss?inline";
 
-import SolutionsPage from "../modules/Solutions/SolutionsPage.astro";
+import AboutHero from "../modules/About/AboutHero.astro";
+import Mission from "../modules/About/Mission.astro";
+import OurTeam from "../modules/About/OurTeam.astro";
 import Seo from "@/components/Seo.astro";
 ---
 
 <BaseLayout>
   <Seo
     slot="seo"
-    title="Solutions | FluxFusion"
+    title="About Us | FluxFusion"
     description=""
     og={{
-      image: "/assets/images/meta/og/home.png",
+      image: "/assets/og/about-us.webp",
       imageAlt: "FluxFusion Open Graph Banner",
     }}
   />
-  <SolutionsPage />
+  <AboutHero />
+
+  <Mission />
+
+  <OurTeam />
 
   <style slot="header" is:inline set:html={styles}></style>
 

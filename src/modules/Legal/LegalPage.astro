@@ -3,6 +3,7 @@ import Hero from "@/components/Hero/Hero.astro";
 import Container from "@/components/Container/Container.astro";
 import TableOfContents from "../../components/TableOfContents/TableOfContents.astro";
 import { tocData, data } from "@/data/legal.ts";
+import Icon from "@/elements/Icon.astro";
 ---
 
 <Hero className="legal">
@@ -10,6 +11,11 @@ import { tocData, data } from "@/data/legal.ts";
 </Hero>
 
 <Container className="legal contents">
+  <button class="toc mobile" data-open>
+    Table of Contents
+    <Icon variant="chevron-right" size="lg" />
+  </button>
+
   <TableOfContents links={tocData} />
 
   <div class="right">

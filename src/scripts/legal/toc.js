@@ -1,4 +1,8 @@
-const tocContainer = document.querySelector(".toc.component");
+const tocContainer = document.querySelector(".toc.component[data-open]");
+
+const tocMobileBtn = document.querySelector(
+  ".legal.contents button.toc.mobile[data-open]"
+);
 
 function updateActive(currentHash) {
   const tocLinks = tocContainer.querySelectorAll("a");
@@ -47,6 +51,51 @@ function toggleLinks() {
   });
 }
 
+function togglePageScroll(enable = true) {
+  if (enable) {
+    document.body.classList.remove("no", "vertical", "scroll");
+  } else {
+    document.body.classList.add("no", "vertical", "scroll");
+  }
+}
+
+function toggleTocMobileSidebar() {
+  tocMobileBtn.addEventListener("click", () => {
+    const isOpen = tocContainer.dataset.open === "true";
+    const newState = isOpen ? "false" : "true";
+    tocContainer.dataset.open = newState;
+    tocMobileBtn.dataset.open = newState;
+
+    if (newState === "true") togglePageScroll(false);
+    else togglePageScroll(true);
+  });
+
+  document.addEventListener("click", (event) => {
+    const isOpen = tocContainer.dataset.open === "true";
+
+    if (!isOpen) return;
+
+    if (event.target.closest("button.toc.mobile")) return;
+
+    if (event.target.closest(".toc.component")) {
+      const clickedOnLink = event.target.closest("a");
+      if (clickedOnLink) {
+        tocContainer.dataset.open = "false";
+        tocMobileBtn.dataset.open = "false";
+        togglePageScroll(true);
+      }
+
+      return;
+    }
+
+    tocContainer.dataset.open = "false";
+    tocMobileBtn.dataset.open = "false";
+    togglePageScroll(true);
+  });
+}
+
 checkActive();
 
 toggleLinks();
+
+toggleTocMobileSidebar();

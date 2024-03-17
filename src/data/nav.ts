@@ -1,11 +1,11 @@
 const nav = [
   {
     name: "Solutions",
-    href: "/solutions",
+    href: "/our-solutions",
   },
   {
     name: "About Us",
-    href: "/about",
+    href: "/about-us",
   },
   {
     name: "Legal",
@@ -13,7 +13,7 @@ const nav = [
   },
   {
     name: "Contact Us",
-    href: "/contact",
+    href: "/contact-us",
     isButton: true,
   },
 ];
