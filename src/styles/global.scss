@@ -85,6 +85,12 @@ html {
     height: max-content;
     position: relative;
   }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
 }
 
 button,

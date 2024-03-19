@@ -9,7 +9,7 @@
   @include utils.custom-background("/assets/home-hero.webp");
   padding: 96px 0 56px;
 
-  p.hero.title {
+  h1.hero.title {
     @include styles.display-xl;
     @include weights.semibold;
     color: colors.$gray-iron-25;
@@ -19,7 +19,7 @@
   @media (max-width: 767px) {
     padding: 32px 0 56px;
 
-    p.hero.title {
+    h1.hero.title {
       @include styles.display-sm;
       text-align: left;
     }

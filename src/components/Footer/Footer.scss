@@ -57,6 +57,11 @@
           @include styles.text-md;
           @include weights.semibold;
           color: colors.$base-white;
+
+          &:hover {
+            background-color: colors.$rose-50;
+            color: colors.$rose-600;
+          }
         }
       }
 
@@ -72,6 +77,10 @@
 
         a {
           text-decoration: underline;
+        }
+
+        a:hover {
+          color: colors.$base-white;
         }
       }
 
@@ -138,7 +147,7 @@
         height: 40px;
       }
 
-      p.heading {
+      h3.heading {
         @include styles.display-sm;
         @include weights.semibold;
         margin-top: 16px;
@@ -166,6 +175,10 @@
 
           a {
             color: colors.$gray-iron-300;
+
+            &:hover {
+              color: colors.$base-white;
+            }
           }
         }
       }

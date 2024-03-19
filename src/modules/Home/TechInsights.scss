@@ -26,7 +26,7 @@
           height: 77px;
         }
 
-        p.title {
+        h2.title {
           @include styles.display-md;
           @include weights.semibold;
           margin-top: 20px;
@@ -49,6 +49,11 @@
         @include styles.text-md;
         @include weights.semibold;
         white-space: nowrap;
+
+        &:hover {
+          background-color: colors.$rose-50;
+          color: colors.$rose-600;
+        }
       }
     }
 
@@ -116,7 +121,7 @@
         gap: 32px;
 
         .left {
-          p.title {
+          h2.title {
             @include styles.text-xl;
           }
 

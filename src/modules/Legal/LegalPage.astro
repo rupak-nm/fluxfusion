@@ -7,7 +7,7 @@ import Icon from "@/elements/Icon.astro";
 ---
 
 <Hero className="legal">
-  <p class="hero title">Legal</p>
+  <h1 class="hero title">Legal</h1>
 </Hero>
 
 <Container className="legal contents">
@@ -22,9 +22,9 @@ import Icon from "@/elements/Icon.astro";
     {
       data.map((item) => (
         <div class="item">
-          <p class={item.isHeading ? "heading" : "title"} id={item.id}>
+          <h2 class={item.isHeading ? "heading" : "title"} id={item.id}>
             {item.title}
-          </p>
+          </h2>
 
           {item.description && (
             <div class="description">

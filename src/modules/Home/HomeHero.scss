@@ -28,6 +28,11 @@
       color: colors.$base-white;
       @include styles.text-md;
       @include weights.semibold;
+
+      &:hover {
+        background-color: colors.$rose-700;
+        color: colors.$base-white;
+      }
     }
   }
 

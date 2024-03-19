@@ -18,7 +18,7 @@
     .text {
       max-width: 768px;
 
-      p.title {
+      h2.title {
         @include styles.display-md;
         @include weights.semibold;
         color: colors.$gray-iron-25;
@@ -38,6 +38,11 @@
       color: colors.$base-white;
       @include styles.text-md;
       @include weights.semibold;
+
+      &:hover {
+        background-color: colors.$rose-700;
+        color: colors.$base-white;
+      }
     }
   }
 
@@ -91,7 +96,7 @@
       gap: 48px;
 
       .text {
-        p.title {
+        h2.title {
           @include styles.display-sm;
         }
 

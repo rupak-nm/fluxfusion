@@ -13,7 +13,7 @@
     max-width: 768px;
     margin: 0 auto;
 
-    p.title {
+    h2.title {
       @include styles.display-md;
       @include weights.semibold;
       color: colors.$gray-iron-25;
@@ -50,7 +50,7 @@
     padding: 32px 0;
 
     .text {
-      .title {
+      h2.title {
         @include styles.display-sm;
       }
 
