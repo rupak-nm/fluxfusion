@@ -48,7 +48,9 @@
           background-color: colors.$base-white;
           @include styles.text-md;
           @include weights.regular;
-          width: 360px;
+          width: 100%;
+          display: block;
+          outline: none;
         }
 
         button {
@@ -62,6 +64,11 @@
             background-color: colors.$rose-50;
             color: colors.$rose-600;
           }
+        }
+
+        &:focus-within:not(:has(button:focus)) {
+          outline-style: auto;
+          outline-color: blue;
         }
       }
 
@@ -119,14 +126,26 @@
         .subheading {
           @include styles.text-md;
         }
+      }
 
-        form {
-          width: 100%;
-          flex-direction: column;
+      form {
+        width: 100%;
+        flex-direction: column;
 
-          input,
+        .row {
+          outline: none;
+
           button {
             width: 100%;
+          }
+
+          input:focus {
+            outline: auto;
+            outline-color: blue;
+          }
+
+          &:focus-within:not(:has(button:focus)) {
+            outline: none;
           }
         }
       }

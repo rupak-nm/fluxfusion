@@ -7,102 +7,109 @@ const recaptchaKey = import.meta.env.RECAPTCHA_SITE_KEY;
 ---
 
 <div class="contact us page">
-  <div class="left">
-    <div class="text">
-      <p class="heading">Contact Us</p>
-      <p class="subheading">
-        Thank you for your interest in Flux Fusion. If you have any questions,
-        feedback, or inquiries, please feel free to reach out to us. We value
-        your input and are here to assist you.
-      </p>
-      <p class="email">info@fluxfusion.com</p>
-    </div>
+  <div class="left bg"></div>
+  <div class="right bg"></div>
 
-    <div class="address">
-      <Icon variant="location-marker" />
-
-      <div>
-        <p>Flux Fusion Technologies Pvt. Ltd.</p>
-        <p>123 Tech Street,</p>
-        <p>Cyber City, XYZ 56789,</p>
-        <p>India</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="right">
-    <Icon variant="envelope" />
-
-    <form>
-      <div class="row">
-        <Input
-          label="First name"
-          placeholder="First name"
-          id="first-name"
-          name="firstName"
-          required
-        />
-        <Input
-          label="Last name"
-          placeholder="Last name"
-          id="last-name"
-          name="lastName"
-          required
-        />
+  <div class="inner">
+    <div class="left section">
+      <div class="text">
+        <p class="heading">Contact Us</p>
+        <p class="subheading">
+          Thank you for your interest in Flux Fusion. If you have any questions,
+          feedback, or inquiries, please feel free to reach out to us. We value
+          your input and are here to assist you.
+        </p>
+        <p class="email">info@fluxfusion.com</p>
       </div>
 
-      <Input
-        label="Email"
-        placeholder="you@company.com"
-        type="email"
-        id="email"
-        name="email"
-        required
-      />
+      <div class="address">
+        <Icon variant="location-marker" />
 
-      <Input
-        label="Phone number"
-        options={["US", "UK", "IN", "AU"]}
-        selectWithInput={{
-          type: "tel",
-          placeholder: "+1 (555) 000-0000",
-          id: "phone",
-          name: "phone",
-          required: true,
-        }}
-      />
-
-      <Input
-        label="Message"
-        placeholder="Leave us a message..."
-        textarea
-        id="message"
-        name="message"
-        required
-      />
-
-      <div class="checkbox group">
-        <p class="label">Solutions</p>
-
-        <div class="checkboxes">
-          <CustomCheckbox name="solution1">
-            AI-Powered Threat Detection
-          </CustomCheckbox>
-
-          <CustomCheckbox name="solution2">AI Integration</CustomCheckbox>
-
-          <CustomCheckbox name="solution3">Innovative Solutions</CustomCheckbox>
+        <div>
+          <p>Flux Fusion Technologies Pvt. Ltd.</p>
+          <p>123 Tech Street,</p>
+          <p>Cyber City, XYZ 56789,</p>
+          <p>India</p>
         </div>
       </div>
+    </div>
 
-      <div class="captcha field">
-        <div class="g-recaptcha" data-sitekey={recaptchaKey}></div>
-      </div>
+    <div class="right section">
+      <Icon variant="envelope" />
 
-      <button class="submit" type="submit">Send Message</button>
+      <form>
+        <div class="row">
+          <Input
+            label="First name"
+            placeholder="First name"
+            id="first-name"
+            name="firstName"
+            required
+          />
+          <Input
+            label="Last name"
+            placeholder="Last name"
+            id="last-name"
+            name="lastName"
+            required
+          />
+        </div>
 
-      <p class="message"></p>
-    </form>
+        <Input
+          label="Email"
+          placeholder="you@company.com"
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+
+        <Input
+          label="Phone number"
+          options={["US", "UK", "IN", "AU"]}
+          selectWithInput={{
+            type: "tel",
+            placeholder: "+1 (555) 000-0000",
+            id: "phone",
+            name: "phone",
+            required: true,
+          }}
+        />
+
+        <Input
+          label="Message"
+          placeholder="Leave us a message..."
+          textarea
+          id="message"
+          name="message"
+          required
+        />
+
+        <div class="checkbox group">
+          <p class="label">Solutions</p>
+
+          <div class="checkboxes">
+            <CustomCheckbox name="solution1">
+              AI-Powered Threat Detection
+            </CustomCheckbox>
+
+            <CustomCheckbox name="solution2">AI Integration</CustomCheckbox>
+
+            <CustomCheckbox name="solution3"
+              >Innovative Solutions</CustomCheckbox
+            >
+          </div>
+        </div>
+
+        <div class="captcha field">
+          <div class="g-recaptcha" data-sitekey={recaptchaKey}></div>
+        </div>
+
+        <button class="submit" type="submit">Send Message</button>
+
+        <p class="message"></p>
+      </form>
+    </div>
   </div>
 </div>
 
