@@ -93,6 +93,13 @@ html {
   }
 }
 
+*, :focus, input:focus, textarea:focus, select:focus,
+:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline-color: white;
+  outline-offset: 3px;
+  outline-width: 2px;
+}
+
 button,
 .pointer {
   cursor: pointer;

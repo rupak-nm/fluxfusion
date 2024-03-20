@@ -19,5 +19,9 @@
   "devDependencies": {
     "@types/node": "^20.11.24",
     "sass": "^1.71.1"
+  },
+  "volta": {
+    "node": "20.9.0",
+    "yarn": "1.22.19"
   }
 }
