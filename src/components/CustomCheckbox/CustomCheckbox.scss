@@ -39,7 +39,7 @@ $checked-background-image: "data:image/svg+xml,%3Csvg width='20' height='20' vie
     }
 
     input:is(:focus-visible, :focus, :focus-within) + .checkmark {
-      box-shadow: 0px 0px 0px 4px colors.$primary-900;
+      outline-style: auto;
     }
 
     /* Create a custom checkbox */
