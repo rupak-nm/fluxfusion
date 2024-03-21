@@ -59,8 +59,9 @@
           @include styles.text-md;
           @include weights.semibold;
           color: colors.$base-white;
+          outline-style: none;
 
-          &:hover {
+          &:hover, &:focus-visible {
             background-color: colors.$rose-50;
             color: colors.$rose-600;
           }
